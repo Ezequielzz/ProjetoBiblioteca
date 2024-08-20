@@ -212,4 +212,18 @@ Usuários de todas as faixas etárias.
   - **Reuniões** quinzenais para revisão do progresso e ajustes no cronograma conforme necessário.
   - **Metodologia ágil** para permitir flexibilidade durante o desenvolvimento e a adaptação a imprevistos.
 
-    
+## Diagrama de Classe
+
+<div align="center">
+    <img src="/BibliotecaIMG/Diagrama Classes Biblioteca.png">
+</div>
+
+## Diagrama de Uso
+<div align="center">
+    <img src="/BibliotecaIMG/Diagrama Uso Biblioteca.png">
+</div>
+
+## Diagrama de Uso
+<div align="center">
+    <img src="/BibliotecaIMG/Diagrama Fluxo Biblioteca.png">
+</div>

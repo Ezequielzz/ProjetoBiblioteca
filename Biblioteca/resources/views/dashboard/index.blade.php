@@ -2,5 +2,4 @@
 
 @section('content')
     <x-navbar></x-navbar>
-    
 @endsection

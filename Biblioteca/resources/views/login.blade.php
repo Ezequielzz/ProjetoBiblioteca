@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+<x-navbar></x-navbar>
     <div>
         <div class="container">
             <h1>Login</h1>

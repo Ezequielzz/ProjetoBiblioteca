@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('endereco');
-            $table->string('data_nascimento');
+            $table->date('data_nascimento');
             $table->enum('tipo', ['usuario', 'bibliotecario'])->default('usuario');
             $table->rememberToken();
             $table->timestamps();

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Exception;
 
 class UserController extends Controller
@@ -27,11 +28,11 @@ class UserController extends Controller
         ]);
 
         // Tenta autenticar com o guard 'user'
-        if (Auth::guard('user')->attempt($credentials)) {
+        if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate(); // Regenera a sessão para evitar fixação de sessão
             return redirect()->intended('/dashboard');
-        } else{
-            dd(Auth::guard('user')->attempt());
+        } else {
+            dd(Auth::guard('web')->attempt());
         }
 
         // Se falhar, retorna com erro
@@ -52,24 +53,42 @@ class UserController extends Controller
     public function register(Request $request)
     {
         try {
+            // Valida os dados do formulário de registro
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255',
                 'password' => 'required|string|min:3',
+                'endereco' => 'required|string|max:255',
+                'data_nascimento' => 'required|string'
             ]);
 
+            // Converte a data de nascimento do formato 'd/m/Y' (dd/mm/aaaa) para um objeto Carbon
+            $dataNascimento = \Carbon\Carbon::createFromFormat('d/m/Y', $request->data_nascimento);
+
+            // Valida se a data de nascimento é anterior a hoje (ou seja, não permite datas futuras)
+            if (!$dataNascimento || $dataNascimento->isFuture()) {
+                // Se a data for inválida ou estiver no futuro, retorna com um erro personalizado
+                return back()->withErrors(['data_nascimento' => 'A data de nascimento deve ser uma data válida e anterior a hoje.']);
+            }
+
+            // Converte a data para o formato 'Y-m-d' (aaaa-mm-dd), que é o formato padrão para o banco de dados
+            $dataNascimentoFormatada = $dataNascimento->format('Y-m-d');
+
+            // Cria o novo usuário no banco de dados usando os dados validados e a data formatada
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
+                'endereco' => $request->endereco,
+                'data_nascimento' => $dataNascimentoFormatada,
             ]);
 
-            Auth::login($user);
-
             if ($user) {
-                return redirect('/dashboard');
+                // Armazena uma mensagem de sucesso na sessão
+                Session::flash('success', 'Cadastro realizado com sucesso!');
             }
         } catch (Exception $error) {
+            // Em caso de erro (por exemplo, erro de banco de dados), retorna com uma mensagem de erro
             return back()->withErrors('Ocorreu um erro ' . $error->getMessage());
         }
     }
@@ -78,7 +97,7 @@ class UserController extends Controller
     // Realizar o logout do usuário
     public function logout(Request $request)
     {
-        Auth::guard('user')->logout(); // Logout do guard 'user'
+        Auth::guard('web')->logout(); // Logout do guard 'user'
         $request->session()->regenerateToken(); // Regenera o token da sessão
 
 
