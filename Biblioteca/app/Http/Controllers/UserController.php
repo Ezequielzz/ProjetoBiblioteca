@@ -30,7 +30,7 @@ class UserController extends Controller
         // Tenta autenticar com o guard 'user'
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate(); // Regenera a sessão para evitar fixação de sessão
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('dashboard.index');
         } else {
             dd(Auth::guard('web')->attempt());
         }
@@ -84,8 +84,7 @@ class UserController extends Controller
             ]);
 
             if ($user) {
-                // Armazena uma mensagem de sucesso na sessão
-                Session::flash('success', 'Cadastro realizado com sucesso!');
+                return redirect()->route('cadastro')->with('success', 'Usuário cadastrado com sucesso!');
             }
         } catch (Exception $error) {
             // Em caso de erro (por exemplo, erro de banco de dados), retorna com uma mensagem de erro

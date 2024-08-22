@@ -18,6 +18,24 @@
                 <li class="nav-item">
                     <a class="nav-link" id="forms" href="{{ route('cadastro') }}">Cadastro</a>
                 </li>
+                @if (Auth::check())
+                    @if (Auth::user()->tipo === 'bibliotecario')
+                        <li class="nav-item">
+                            <a class="nav-link" id="forms" href="{{ route('livros.index') }}">Livros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="forms" href="{{ route('emprestimos.index') }}">Emprestimos</a>
+                        </li>
+                    @else
+                    @endif
+                @endif
+                <li class="nav-item">
+                    @if (Auth::check())
+                        <form action="{{ route('usuarios.logout') }}" method="post">
+                            @csrf
+                            <input type="submit" value="Sair">
+                        </form>
+                    @endif
             </ul>
         </div>
     </div>

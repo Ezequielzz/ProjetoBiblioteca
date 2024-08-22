@@ -41,7 +41,7 @@
 
             <div class="form-group">
                 <label for="disponibilidade">Disponibilidade:</label>
-                <select name="disponibilidade" class="form-control">
+                <select name="disponibilidade" id="disponibilidade" class="form-control" required>
                     <option value="disponivel" {{ $livro->disponibilidade == 'disponivel' ? 'selected' : '' }}>Disponível</option>
                     <option value="indisponivel" {{ $livro->disponibilidade == 'indisponivel' ? 'selected' : '' }}>Indisponível</option>
                 </select>

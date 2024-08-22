@@ -70,7 +70,7 @@ class LivroController extends Controller
             'titulo' => 'required',
             'autor' => 'required',
             'categoria' => 'required',
-            'disponibilidade' => 'required|boolean',
+            'disponibilidade' => 'required|in:disponivel,indisponivel'
         ]);
         $livro->update($dados);
 
@@ -84,6 +84,6 @@ class LivroController extends Controller
     public function destroy(Livro $livro)
     {
         $livro->delete($livro);
-        return redirect()->route('dashboard.livros.index')->with('success', 'Livro deletado com sucesso!');
+        return redirect()->route('livros.index')->with('success', 'Livro deletado com sucesso!');
     }
 }

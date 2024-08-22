@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -47,4 +48,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // Verifica se o usuário é bibliotecário
+    public function isBibliotecario()
+    {
+        return $this->tipo === 'bibliotecario';
+    }
+
+    // Relacionamento de um usuário com vários empréstimos
+    public function emprestimos(): HasMany
+    {
+        return $this->hasMany(Emprestimo::class);
+    }
+
 }
