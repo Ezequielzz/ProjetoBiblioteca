@@ -46,12 +46,62 @@ Usuários de todas as faixas etárias.
    - **IDE:** Visual Studio Code
    - **Banco de Dados**: PostgreSQL
    - **Linguagem/Framework:** PHP com Laravel
-   - **Equipes:** Frontend, Backend, Segurança
+   - **Equipes:** Gerenciamento, Frontend, Backend, Segurança, QA, Suporte e Treinamento, DevOps e Infraestrutura e Especialista em Dados
    - **Serviços de Hospedagem:** DigitalOcean, AWS, Laravel Forge
    - **Serviços de Monitoramento:** Sentry, New Relic, Monolog
    - **Comunicação/Colaboração:** GitHub, Teams
    - **Backup:** AWS S3, Google Cloud Storage
    - **APIs Externas:** Google Maps, Email Services
+
+# Recursos Humanos e Equipes
+
+## Equipes Principais
+
+### Equipe de Gerenciamento do Projeto
+**Função:** Responsável por coordenar todas as atividades do projeto, manter o cronograma e garantir a comunicação eficaz entre todas as equipes.  
+**Componentes:**
+- **Gerente de Projeto:** Lidera a equipe e assegura que o projeto atinja seus objetivos no prazo e dentro do orçamento.
+- **Coordenador Ágil:** Garante a adoção das práticas ágeis, facilitando reuniões e removendo impedimentos.
+
+### Equipe de Desenvolvimento Backend
+**Função:** Desenvolver e manter a lógica do servidor, banco de dados e APIs.  
+**Componentes:**
+- **Desenvolvedor Backend Sênior:** Responsável pela arquitetura do sistema e decisões de tecnologia.
+- **Desenvolvedor Backend Pleno:** Implementa funcionalidades e integrações, além de cuidar do banco de dados.
+- **Desenvolvedor Backend Júnior:** Auxilia na implementação e manutenção das funcionalidades, focando em tarefas menos complexas.
+
+### Equipe de Desenvolvimento Frontend
+**Função:** Desenvolver a interface do usuário (UI) e assegurar uma boa experiência de uso (UX).  
+**Componentes:**
+- **Desenvolvedor Frontend Sênior:** Responsável pela arquitetura do frontend e decisões sobre frameworks e bibliotecas.
+- **Desenvolvedor Frontend Pleno:** Foca na implementação das interfaces e integrações com APIs.
+- **Desenvolvedor Frontend Júnior:** Auxilia na implementação de componentes visuais e manutenção de código.
+
+### Equipe de Segurança
+**Função:** Proteger o sistema contra vulnerabilidades e assegurar conformidade com regulamentações como a LGPD.  
+**Componentes:**
+- **Especialista em Segurança:** Realiza auditorias de segurança e define práticas para proteger os dados.
+- **Analista de Segurança:** Monitora a segurança durante o desenvolvimento e identifica vulnerabilidades.
+
+### Equipe de QA (Qualidade)
+**Função:** Testar o sistema para garantir que todas as funcionalidades atendam aos requisitos.  
+**Componentes:**
+- **Engenheiro de QA Sênior:** Define estratégias de testes e automatiza processos de verificação.
+- **Analista de QA Pleno:** Realiza testes manuais e supervisiona testes automatizados.
+- **Testador Júnior:** Executa testes manuais e documenta bugs.
+
+### Equipe de Suporte e Treinamento
+**Função:** Capacitar a equipe da biblioteca e prestar suporte pós-lançamento.  
+**Componentes:**
+- **Especialista em Treinamento:** Cria materiais didáticos e realiza treinamentos com a equipe da biblioteca.
+- **Suporte Técnico:** Auxilia na resolução de problemas técnicos durante a transição para o novo sistema.
+
+### Equipe de DevOps e Infraestrutura
+**Função:** Gerenciar servidores, deploys, e monitoramento.  
+**Componentes:**
+- **Engenheiro DevOps Sênior:** Define a arquitetura de deploy e monitora o desempenho.
+- **Administrador de Sistemas:** Configura e mantém servidores e serviços de hospedagem.
+
 
 ## Análise de Riscos:
 
@@ -225,5 +275,5 @@ Usuários de todas as faixas etárias.
 
 ## Diagrama de Uso
 <div align="center">
-    <img src="/BibliotecaIMG/Diagrama Fluxo Biblioteca.png">
+    <img src="/BibliotecaIMG/Diagrama Fluxo Biblioteca.jpg">
 </div>
