@@ -5,17 +5,6 @@
 ### 1.1. Objetivo do Sistema
 O Sistema de Gerenciamento de Biblioteca é uma aplicação web desenvolvida para gerenciar o acervo de livros, os usuários da biblioteca e os empréstimos realizados. Este sistema foi projetado para bibliotecários e usuários, oferecendo uma interface simples para cadastrar livros, gerenciar usuários e controlar os empréstimos de maneira eficiente.
 
-### 1.2. Tecnologias Utilizadas
-- **Backend**: PHP com Laravel
-- **Banco de Dados**: PostgreSQL
-- **Deploy**: DigitalOcean, Laravel Forge, AWS
-- **Monitoramento**: Sentry, New Relic, Monolog
-- **Controle de Versão**: GitHub
-- **Outros Serviços**: AWS S3, Google Cloud Storage, Google Maps, Email Services
-
-### 1.3. Metodologia de Desenvolvimento
-O desenvolvimento do sistema segue uma metodologia ágil, com reuniões quinzenais para revisões e ajustes contínuos de acordo com as necessidades do projeto.
-
 ## 2. Funcionalidades Principais
 
 ### 2.1. Cadastro de Usuários
@@ -84,19 +73,9 @@ O bibliotecário pode registrar a devolução de um livro, atualizando o status 
 - **Cadastro**: Página para novos usuários se cadastrarem no sistema.
 
 ### 3.2. Páginas Internas (Protegidas por Autenticação)
-- **Dashboard do Bibliotecário**: Painel principal onde o bibliotecário pode acessar todas as funcionalidades do sistema.
-- **Cadastro de Usuários**: Página para gerenciar usuários.
 - **Livros**: Página para gerenciar o acervo da biblioteca.
 - **Empréstimos**: Página para registrar e gerenciar empréstimos e devoluções.
 
-## 4. Relatórios
+## Observação
 
-### 4.1. Relatório de Empréstimos
-
-#### 4.1.1. Descrição
-Permite ao bibliotecário visualizar todos os empréstimos realizados, podendo filtrar por usuário, livro, data de empréstimo, e status do empréstimo.
-
-### 4.2. Passos para Gerar um Relatório
-1. Acesse a página de Relatórios.
-2. Selecione os filtros desejados.
-3. Clique em "Gerar Relatório".
+- **Suporte**: Bibliotecário,se necessário contatar a equipe de suporte para ajudá-lo caso haja falta de instruções dentro deste manual.
