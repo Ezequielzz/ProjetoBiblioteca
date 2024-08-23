@@ -21,15 +21,15 @@ O desenvolvimento do sistema segue uma metodologia ágil, com reuniões quinzena
 ### 2.1. Cadastro de Usuários
 
 #### 2.1.1. Descrição
-Esta funcionalidade permite que o bibliotecário cadastre novos usuários no sistema. Os usuários podem ser alunos, professores ou outros membros da instituição.
+Esta funcionalidade permite que o bibliotecário cadastre novos usuários no sistema. Os usuários podem ser usuarios comuns ou bibliotecarios da instituição.
 
 #### 2.1.2. Passos para Cadastrar um Usuário
 1. Acesse a página de Cadastro de Usuários.
-2. Preencha os campos obrigatórios: Nome, E-mail, Senha, Tipo de Usuário (Aluno, Professor, etc.).
+2. Preencha os campos obrigatórios: Nome, E-mail, Senha, Endereço e Data de Nascimento.
 3. Clique em "Salvar" para concluir o cadastro.
 
 #### 2.1.3. Observações
-- O bibliotecário tem acesso ao CRUD completo (criar, ler, atualizar e deletar) de usuários.
+- O bibliotecário tem acesso ao CRUD completo (criar, ler, atualizar e deletar) de livros e empréstimos.
 - O sistema exige que o e-mail seja único no cadastro.
 
 ### 2.2. Cadastro de Livros
@@ -39,7 +39,7 @@ O bibliotecário pode adicionar novos livros ao acervo da biblioteca através de
 
 #### 2.2.2. Passos para Cadastrar um Livro
 1. Acesse a página de Cadastro de Livros.
-2. Preencha os campos obrigatórios: Título, Autor, Ano de Publicação, ISBN, Categoria, e Disponibilidade (Disponível ou Indisponível).
+2. Preencha os campos obrigatórios: Título, Autor, Categoria, e Disponibilidade (Disponível ou Indisponível).
 3. Clique em "Salvar" para concluir o cadastro.
 
 #### 2.2.3. Observações
@@ -71,7 +71,7 @@ O bibliotecário pode registrar a devolução de um livro, atualizando o status 
 1. Acesse a página de Empréstimos.
 2. Localize o empréstimo correspondente ao livro a ser devolvido.
 3. Clique no botão "Registrar Devolução".
-4. O sistema atualizará automaticamente o status do livro para "Disponível" e o status do empréstimo para "Concluído".
+4. O sistema atualizará automaticamente o status do livro para "Disponível" e o status do empréstimo para "Devolvido".
 
 #### 2.4.3. Observações
 - A devolução do livro altera a disponibilidade para "Disponível" no cadastro de livros.
@@ -86,7 +86,7 @@ O bibliotecário pode registrar a devolução de um livro, atualizando o status 
 ### 3.2. Páginas Internas (Protegidas por Autenticação)
 - **Dashboard do Bibliotecário**: Painel principal onde o bibliotecário pode acessar todas as funcionalidades do sistema.
 - **Cadastro de Usuários**: Página para gerenciar usuários.
-- **Cadastro de Livros**: Página para gerenciar o acervo da biblioteca.
+- **Livros**: Página para gerenciar o acervo da biblioteca.
 - **Empréstimos**: Página para registrar e gerenciar empréstimos e devoluções.
 
 ## 4. Relatórios
