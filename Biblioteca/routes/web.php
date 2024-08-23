@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LivroController;
 use App\Http\Controllers\EmprestimoController;
+use App\Http\Middleware\CheckBibliotecario;
 
 // Rotas Públicas
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -20,11 +20,7 @@ Route::post('/cadastro', [UserController::class, 'register'])->name('cadastro');
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-
-    Route::get('/livros', [LivroController::class, 'index'])->name('livros.index');
-    Route::resource('livros', LivroController::class)->except('index');
-
+    Route::get('livros/{livro}', [LivroController::class, 'show'])->name('livros.show');
 
     Route::get('/emprestimos', [EmprestimoController::class, 'index'])->name('emprestimos.index');
     Route::resource('emprestimos', EmprestimoController::class);
@@ -37,6 +33,9 @@ Route::middleware(['auth'])->group(function () {
     // Adicione esta rota dentro do grupo de middleware 'auth'
     Route::post('/emprestimos/devolver/{id}', [EmprestimoController::class, 'devolver'])->name('emprestimos.devolver');
 });
+
+Route::resource('/livros', LivroController::class)->middleware(CheckBibliotecario::class)->except('show');
+
 
 // Rota para logout
 Route::post('/logout', [UserController::class, 'logout'])->name('usuarios.logout');

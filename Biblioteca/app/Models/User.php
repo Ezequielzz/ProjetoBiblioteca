@@ -49,10 +49,10 @@ class User extends Authenticatable
         ];
     }
 
-    // Verifica se o usuário é bibliotecário
+    // Método para verificar se o usuário é bibliotecário
     public function isBibliotecario()
     {
-        return $this->tipo === 'bibliotecario';
+        return $this->tipo == 'bibliotecario';
     }
 
     // Relacionamento de um usuário com vários empréstimos

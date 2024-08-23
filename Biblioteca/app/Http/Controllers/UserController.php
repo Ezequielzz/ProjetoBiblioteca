@@ -30,7 +30,7 @@ class UserController extends Controller
         // Tenta autenticar com o guard 'user'
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate(); // Regenera a sessão para evitar fixação de sessão
-            return redirect()->intended('dashboard.index');
+        return redirect()->intended('/');
         } else {
             dd(Auth::guard('web')->attempt());
         }
